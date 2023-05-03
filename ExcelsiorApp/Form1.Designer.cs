@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lb_Usuario = new System.Windows.Forms.Label();
             this.tb_Usuario = new System.Windows.Forms.TextBox();
             this.lb_Contraseña = new System.Windows.Forms.Label();
@@ -45,9 +44,11 @@
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.lb_Info = new System.Windows.Forms.Label();
+            this.pb_Fondo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Fondo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -83,18 +84,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(806, 90);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(-7, 167);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(806, 284);
-            this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // lb_Usuario
             // 
@@ -214,18 +203,30 @@
             this.lb_Info.AutoSize = true;
             this.lb_Info.BackColor = System.Drawing.Color.Gray;
             this.lb_Info.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Info.Location = new System.Drawing.Point(262, 134);
+            this.lb_Info.Location = new System.Drawing.Point(262, 131);
             this.lb_Info.Name = "lb_Info";
             this.lb_Info.Size = new System.Drawing.Size(31, 16);
             this.lb_Info.TabIndex = 15;
             this.lb_Info.Text = "Info.";
             this.lb_Info.Click += new System.EventHandler(this.lb_Info_Click);
             // 
+            // pb_Fondo
+            // 
+            this.pb_Fondo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_Fondo.Location = new System.Drawing.Point(-7, 157);
+            this.pb_Fondo.Name = "pb_Fondo";
+            this.pb_Fondo.Size = new System.Drawing.Size(806, 296);
+            this.pb_Fondo.TabIndex = 16;
+            this.pb_Fondo.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pb_Fondo);
             this.Controls.Add(this.lb_Info);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel4);
@@ -238,7 +239,6 @@
             this.Controls.Add(this.lb_Contraseña);
             this.Controls.Add(this.tb_Usuario);
             this.Controls.Add(this.lb_Usuario);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -248,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Fondo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +259,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label lb_Usuario;
         private System.Windows.Forms.TextBox tb_Usuario;
         private System.Windows.Forms.Label lb_Contraseña;
@@ -271,6 +271,7 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.Label lb_Info;
+        private System.Windows.Forms.PictureBox pb_Fondo;
     }
 }
 
