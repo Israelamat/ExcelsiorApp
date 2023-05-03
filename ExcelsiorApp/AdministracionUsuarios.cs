@@ -14,6 +14,11 @@ namespace ExcelsiorApp
     public partial class AdministracionUsuarios : Form
     {
         List<Cliente> clientes = RellenarLista();
+        EstadisticasUsuarios estadisticasUsuarios;
+
+        public List<Cliente> Clientes { get => clientes; }
+        //public List<Cliente> Clientes{ get; }
+
         public AdministracionUsuarios()
         {
             InitializeComponent();
@@ -54,6 +59,63 @@ namespace ExcelsiorApp
                 
             }
             return clientes;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void AdministracionUsuarios_Load(object sender, EventArgs e)
+        {
+            string[] opcionesDeFiltrado = { "Nombre ASC.", "Nombre DESC.", "Fecha nacimiento.", "Captital." };
+            cb_Filtrar.Items.AddRange(opcionesDeFiltrado);
+        }
+
+        private void cb_Filtrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = cb_Filtrar.SelectedIndex;
+            if(indice == 0)
+            {
+                //List<Cliente> clientesLocal = dataGridView1.DataSource as List<Cliente>;
+                //List<Cliente> clientesOrderAsc = new List<Cliente>();
+                //clientesOrderAsc = clientesLocal.OrderBy(c => c.Nombre).ToList();
+                //dataGridView1.DataSource = clientesLocal.ToList();
+
+                List<Cliente> clientesLocal = dataGridView1.DataSource as List<Cliente>;
+                List<Cliente> clientesOrderAsc = clientesLocal.OrderBy(c => c.Nombre).ToList();
+                dataGridView1.DataSource = clientesOrderAsc;
+
+            }
+            else if (indice == 1)
+            {
+                List<Cliente> clientesLocal = dataGridView1.DataSource as List<Cliente>;
+                List<Cliente> clientesOrderAsc = clientesLocal.OrderByDescending(c => c.Nombre).ToList();
+                dataGridView1.DataSource = clientesOrderAsc;
+            }
+            else if (indice == 2)
+            {
+                List<Cliente> clientesLocal = dataGridView1.DataSource as List<Cliente>;
+                List<Cliente> clientesOrderAsc = clientesLocal.OrderBy(c => c.FechaNacimiento).ToList();
+                dataGridView1.DataSource = clientesOrderAsc;
+            }
+            else if (indice == 3)
+            {
+                List<Cliente> clientesLocal = dataGridView1.DataSource as List<Cliente>;
+                List<Cliente> clientesOrderAsc = clientesLocal.OrderByDescending(c => c.Capital).ToList();
+                dataGridView1.DataSource = clientesOrderAsc;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_VerGrafico_Click(object sender, EventArgs e)
+        {
+            estadisticasUsuarios = new EstadisticasUsuarios();
+            estadisticasUsuarios.ShowDialog();
         }
     }
 

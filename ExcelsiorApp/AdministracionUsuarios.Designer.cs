@@ -34,6 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lb_Filtrar = new System.Windows.Forms.Label();
             this.cb_Filtrar = new System.Windows.Forms.ComboBox();
+            this.bt_VerGrafico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,15 +51,15 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-4, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(909, 77);
+            this.pictureBox1.Size = new System.Drawing.Size(1056, 77);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dataGridView1
             // 
@@ -67,13 +68,15 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 342);
+            this.dataGridView1.Size = new System.Drawing.Size(777, 432);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lb_Filtrar
             // 
+            this.lb_Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Filtrar.AutoSize = true;
-            this.lb_Filtrar.Location = new System.Drawing.Point(586, 83);
+            this.lb_Filtrar.Location = new System.Drawing.Point(805, 86);
             this.lb_Filtrar.Name = "lb_Filtrar";
             this.lb_Filtrar.Size = new System.Drawing.Size(67, 16);
             this.lb_Filtrar.TabIndex = 6;
@@ -82,23 +85,30 @@
             // 
             // cb_Filtrar
             // 
+            this.cb_Filtrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_Filtrar.FormattingEnabled = true;
-            this.cb_Filtrar.Items.AddRange(new object[] {
-            "Nombre ASC.",
-            "Nombre DES.",
-            "Fecha nacimiento.",
-            "Captital.",
-            " "});
-            this.cb_Filtrar.Location = new System.Drawing.Point(674, 83);
+            this.cb_Filtrar.Location = new System.Drawing.Point(878, 83);
             this.cb_Filtrar.Name = "cb_Filtrar";
             this.cb_Filtrar.Size = new System.Drawing.Size(121, 24);
             this.cb_Filtrar.TabIndex = 7;
+            this.cb_Filtrar.SelectedIndexChanged += new System.EventHandler(this.cb_Filtrar_SelectedIndexChanged);
+            // 
+            // bt_VerGrafico
+            // 
+            this.bt_VerGrafico.Location = new System.Drawing.Point(808, 482);
+            this.bt_VerGrafico.Name = "bt_VerGrafico";
+            this.bt_VerGrafico.Size = new System.Drawing.Size(141, 32);
+            this.bt_VerGrafico.TabIndex = 8;
+            this.bt_VerGrafico.Text = "Ver Grafico Usuarios";
+            this.bt_VerGrafico.UseVisualStyleBackColor = true;
+            this.bt_VerGrafico.Click += new System.EventHandler(this.bt_VerGrafico_Click);
             // 
             // AdministracionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 450);
+            this.ClientSize = new System.Drawing.Size(1050, 545);
+            this.Controls.Add(this.bt_VerGrafico);
             this.Controls.Add(this.cb_Filtrar);
             this.Controls.Add(this.lb_Filtrar);
             this.Controls.Add(this.dataGridView1);
@@ -106,6 +116,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "AdministracionUsuarios";
             this.Text = "AdministracionUsuarios";
+            this.Load += new System.EventHandler(this.AdministracionUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -120,5 +131,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lb_Filtrar;
         private System.Windows.Forms.ComboBox cb_Filtrar;
+        private System.Windows.Forms.Button bt_VerGrafico;
     }
 }

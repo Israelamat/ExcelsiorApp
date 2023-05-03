@@ -32,22 +32,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lb_Usuario = new System.Windows.Forms.Label();
             this.tb_Usuario = new System.Windows.Forms.TextBox();
             this.lb_Contraseña = new System.Windows.Forms.Label();
             this.tb_Contraseña = new System.Windows.Forms.TextBox();
-            this.bt_SingIn = new System.Windows.Forms.Button();
+            this.bt_SignIn = new System.Windows.Forms.Button();
             this.chb_Recurda = new System.Windows.Forms.CheckBox();
             this.lb_Admin = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.lb_OpBursatiles = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.lb_Info = new System.Windows.Forms.Label();
+            this.pb_Fondo = new System.Windows.Forms.PictureBox();
+            this.bt_LogIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Fondo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -83,18 +85,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(806, 90);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(-7, 167);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(806, 284);
-            this.webBrowser1.TabIndex = 3;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // lb_Usuario
             // 
@@ -132,18 +122,19 @@
             this.tb_Contraseña.Size = new System.Drawing.Size(100, 22);
             this.tb_Contraseña.TabIndex = 7;
             // 
-            // bt_SingIn
+            // bt_SignIn
             // 
-            this.bt_SingIn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.bt_SingIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bt_SingIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_SingIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bt_SingIn.Location = new System.Drawing.Point(601, 82);
-            this.bt_SingIn.Name = "bt_SingIn";
-            this.bt_SingIn.Size = new System.Drawing.Size(100, 29);
-            this.bt_SingIn.TabIndex = 8;
-            this.bt_SingIn.Text = "Sing in";
-            this.bt_SingIn.UseVisualStyleBackColor = false;
+            this.bt_SignIn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.bt_SignIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_SignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_SignIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_SignIn.Location = new System.Drawing.Point(601, 76);
+            this.bt_SignIn.Name = "bt_SignIn";
+            this.bt_SignIn.Size = new System.Drawing.Size(100, 29);
+            this.bt_SignIn.TabIndex = 8;
+            this.bt_SignIn.Text = "Sign in";
+            this.bt_SignIn.UseVisualStyleBackColor = false;
+            this.bt_SignIn.Click += new System.EventHandler(this.bt_SignIn_Click);
             // 
             // chb_Recurda
             // 
@@ -169,15 +160,16 @@
             this.lb_Admin.Text = "Admin";
             this.lb_Admin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lb_Admin_LinkClicked);
             // 
-            // linkLabel2
+            // lb_OpBursatiles
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(396, 21);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(68, 16);
-            this.linkLabel2.TabIndex = 11;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "linkLabel2";
+            this.lb_OpBursatiles.AutoSize = true;
+            this.lb_OpBursatiles.Location = new System.Drawing.Point(374, 21);
+            this.lb_OpBursatiles.Name = "lb_OpBursatiles";
+            this.lb_OpBursatiles.Size = new System.Drawing.Size(90, 16);
+            this.lb_OpBursatiles.TabIndex = 11;
+            this.lb_OpBursatiles.TabStop = true;
+            this.lb_OpBursatiles.Text = "Op. Bursatiles";
+            this.lb_OpBursatiles.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lb_OpBursatiles_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -214,31 +206,57 @@
             this.lb_Info.AutoSize = true;
             this.lb_Info.BackColor = System.Drawing.Color.Gray;
             this.lb_Info.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Info.Location = new System.Drawing.Point(262, 134);
+            this.lb_Info.Location = new System.Drawing.Point(262, 131);
             this.lb_Info.Name = "lb_Info";
             this.lb_Info.Size = new System.Drawing.Size(31, 16);
             this.lb_Info.TabIndex = 15;
             this.lb_Info.Text = "Info.";
             this.lb_Info.Click += new System.EventHandler(this.lb_Info_Click);
             // 
+            // pb_Fondo
+            // 
+            this.pb_Fondo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pb_Fondo.Location = new System.Drawing.Point(-7, 157);
+            this.pb_Fondo.Name = "pb_Fondo";
+            this.pb_Fondo.Size = new System.Drawing.Size(806, 296);
+            this.pb_Fondo.TabIndex = 16;
+            this.pb_Fondo.TabStop = false;
+            // 
+            // bt_LogIn
+            // 
+            this.bt_LogIn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.bt_LogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bt_LogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_LogIn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_LogIn.Location = new System.Drawing.Point(601, 111);
+            this.bt_LogIn.Name = "bt_LogIn";
+            this.bt_LogIn.Size = new System.Drawing.Size(100, 29);
+            this.bt_LogIn.TabIndex = 17;
+            this.bt_LogIn.Text = "Log in";
+            this.bt_LogIn.UseVisualStyleBackColor = false;
+            this.bt_LogIn.Click += new System.EventHandler(this.bt_LogIn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bt_LogIn);
+            this.Controls.Add(this.pb_Fondo);
             this.Controls.Add(this.lb_Info);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.lb_OpBursatiles);
             this.Controls.Add(this.lb_Admin);
             this.Controls.Add(this.chb_Recurda);
-            this.Controls.Add(this.bt_SingIn);
+            this.Controls.Add(this.bt_SignIn);
             this.Controls.Add(this.tb_Contraseña);
             this.Controls.Add(this.lb_Contraseña);
             this.Controls.Add(this.tb_Usuario);
             this.Controls.Add(this.lb_Usuario);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -248,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Fondo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,19 +277,20 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label lb_Usuario;
         private System.Windows.Forms.TextBox tb_Usuario;
         private System.Windows.Forms.Label lb_Contraseña;
         private System.Windows.Forms.TextBox tb_Contraseña;
-        private System.Windows.Forms.Button bt_SingIn;
+        private System.Windows.Forms.Button bt_SignIn;
         private System.Windows.Forms.CheckBox chb_Recurda;
         private System.Windows.Forms.LinkLabel lb_Admin;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel lb_OpBursatiles;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
         private System.Windows.Forms.Label lb_Info;
+        private System.Windows.Forms.PictureBox pb_Fondo;
+        private System.Windows.Forms.Button bt_LogIn;
     }
 }
 
