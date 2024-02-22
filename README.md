@@ -1,7 +1,7 @@
-# BancoApp - Aplicación de Gestión Bancaria
+# ExcelsiorApp - Aplicación de Gestión Bancaria
 
 ## Descripción
-BancoApp es una aplicación de escritorio desarrollada en C# con Windows Forms que proporciona una completa solución para la gestión bancaria. Permite a los usuarios realizar diversas operaciones bancarias, administrar cuentas, realizar transacciones y más.
+ExcelsiorApp es una aplicación de escritorio desarrollada en C# con Windows Forms que proporciona una completa solución para la gestión bancaria. Permite a los usuarios realizar diversas operaciones bancarias, administrar cuentas, realizar transacciones y más.
 
 ## Características
 
