@@ -19,7 +19,7 @@ BancoApp es una aplicación de escritorio desarrollada en C# con Windows Forms q
 
 ## Instalación
 
-1. Clona el repositorio: `git clone https://github.com/tuusuario/BancoApp.git`
+1. Clona el repositorio: https://github.com/Israelamat/ExcelsiorApp.git
 2. Abre la solución en Visual Studio.
 3. Compila y ejecuta la aplicación.
 
