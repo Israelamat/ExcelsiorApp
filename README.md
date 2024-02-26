@@ -27,3 +27,11 @@ ExcelsiorApp es una aplicación de escritorio desarrollada en C# con Windows For
 
 1. Abre el archivo de configuración `app.config`.
 2. Modifica las configuraciones según tus necesidades, como la cadena de conexión a la base de datos.
+
+## Capturasd de Pantalla
+Estas Son algunas pantallas de de la aplicacion, las mas importantes
+[![Excelsior.jpg](https://i.postimg.cc/1zrw87px/Excelsior.jpg)](https://postimg.cc/sB1v8c6K)
+[![Bola-de-Valores-Incrustada.jpg](https://i.postimg.cc/pV4k8T9P/Bola-de-Valores-Incrustada.jpg)](https://postimg.cc/K47nhmrW)
+[![Noticias-Ofertas-Personalizadas-Al-Azar.jpg](https://i.postimg.cc/hPhW4hkg/Noticias-Ofertas-Personalizadas-Al-Azar.jpg)](https://postimg.cc/svF0wff0)
+[![Gestion-Usuarios-Registrados.jpg](https://i.postimg.cc/NFv0Rmm3/Gestion-Usuarios-Registrados.jpg)](https://postimg.cc/zbp5rLd7)
+[![Log-In.jpg](https://i.postimg.cc/JnZXw1qW/Log-In.jpg)](https://postimg.cc/MMZHVJNs)
